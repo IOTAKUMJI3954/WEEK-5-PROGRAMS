@@ -1,25 +1,28 @@
 #include<stdio.h>
 int main(){
-	int n,i;
-	int max,min;
-	float sum=0.0,average;
-	printf("enter how many elements in array:");
+	int i,n,y=0,t=0,j;
+	printf("enter n:");
 	scanf("%d",&n);
 	int array[n];
-	printf("enter the elements:\n");
+	int max,min,sum;
 	for( i=0;i<n;i++){
 		scanf("%d",&array[i]);
+	    sum+=array[i];
 	}
-	max=min=array[0];
-	for(i=0;i<n;i++){
-	
-	   if(array[i]<min)
-	    min=array[i];
-	   if (array[i]>max)
-	   max=array[i];
-	  sum+=array[i];}
-	average=sum/n;
-	printf("maximum of the number:%d\n",max);
-	printf("minimum of the number:%d\n",min);
-	printf("average of the number:%f\n",average);
+		max = array[0];
+		min = array[0];
+	for( j=0;j<n;j++){
+		if (array[j]>max){
+			max = array[j];
+			y=j;
+		}
+		if (array[j]<min){
+			min = array[j];
+			t=j;
+		}	
 	}
+	printf("%d is maximum at index %d\n", max,y);
+	printf("%d is minimum at index %d\n", min,t);
+	printf("sum of the numbers in array%d ",sum);
+	return 0;
+}
