@@ -8,15 +8,12 @@ int main() {
     for(int i=0;i<n;i++){
         scanf("%d",&array[i]);
     }
-    for(int i=0;i<n/2;i++){
+    for(int i=0;i<n-1;i++){
         for(int j=0;j<n-i-1;j++){
-        if(array[i]>array[i+1]){
-        temp=array[i];
-        array[i]=array[n-i-1];
-        array[n-i-1]=temp;}}}
-    for(int i=0;i<n;i++){
-        printf("%d ",array[i]);
-    }
+        if(array[j]>array[j+1]){
+        temp=array[j];
+        array[j]=array[j+1];
+        array[j+1]=temp;}}}
     printf("\n");
     printf("at what number:");
     scanf("%d",&t);
